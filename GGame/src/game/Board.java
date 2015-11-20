@@ -18,9 +18,10 @@ public class Board {
 		}
 		board.setLayout(new GridLayout(8,9));
 		board.setVisible(true);		
-		Frame().add(board);
+		frame().add(board);
 	}
-	private JFrame Frame(){
+	
+	private JFrame frame(){
 		JFrame window = new JFrame();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setPreferredSize(new Dimension(500,500));
@@ -29,5 +30,11 @@ public class Board {
 		window.pack();
 		window.setVisible(true);
 		return window;
+	}
+	
+	 void update(String[] position){
+		for(int i = 0; i < 72; i++){
+			button[i].setText(position[i]);
+		}
 	}
 }
